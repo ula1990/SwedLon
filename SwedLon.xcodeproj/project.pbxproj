@@ -10,6 +10,9 @@
 		263BA022A1D26790297A8BB3 /* Pods_SwedLonUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7226E28E445574CAD54A402D /* Pods_SwedLonUITests.framework */; };
 		5C41B377AC307C636B1B8665 /* Pods_SwedLonTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87061CD4C293DA365B89682E /* Pods_SwedLonTests.framework */; };
 		61251A470A28307F7E17532E /* Pods_SwedLon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FD360338F4FBBDE7CDA1559 /* Pods_SwedLon.framework */; };
+		C0000A4F207E394200B7BE20 /* CompaniesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0000A4E207E394200B7BE20 /* CompaniesCell.swift */; };
+		C0000A52207E398E00B7BE20 /* CompCollectionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0000A51207E398E00B7BE20 /* CompCollectionExtension.swift */; };
+		C0000A55207E3F6400B7BE20 /* CompanyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0000A54207E3F6400B7BE20 /* CompanyModel.swift */; };
 		C0F6741F207DF03500E10E82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F6741E207DF03500E10E82 /* AppDelegate.swift */; };
 		C0F67424207DF03600E10E82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0F67422207DF03600E10E82 /* Main.storyboard */; };
 		C0F67427207DF03600E10E82 /* SwedLon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C0F67425207DF03600E10E82 /* SwedLon.xcdatamodeld */; };
@@ -44,6 +47,9 @@
 		87061CD4C293DA365B89682E /* Pods_SwedLonTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwedLonTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FD360338F4FBBDE7CDA1559 /* Pods_SwedLon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwedLon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9951FE67CE61FAC99717BB2E /* Pods-SwedLonTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwedLonTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwedLonTests/Pods-SwedLonTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C0000A4E207E394200B7BE20 /* CompaniesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesCell.swift; sourceTree = "<group>"; };
+		C0000A51207E398E00B7BE20 /* CompCollectionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompCollectionExtension.swift; sourceTree = "<group>"; };
+		C0000A54207E3F6400B7BE20 /* CompanyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyModel.swift; sourceTree = "<group>"; };
 		C0F6741B207DF03500E10E82 /* SwedLon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwedLon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0F6741E207DF03500E10E82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0F67423207DF03600E10E82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -112,6 +118,30 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		C0000A50207E394C00B7BE20 /* CellModels */ = {
+			isa = PBXGroup;
+			children = (
+				C0000A4E207E394200B7BE20 /* CompaniesCell.swift */,
+			);
+			path = CellModels;
+			sourceTree = "<group>";
+		};
+		C0000A53207E3B4100B7BE20 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C0000A51207E398E00B7BE20 /* CompCollectionExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C0000A56207E404400B7BE20 /* AdditionalClasses */ = {
+			isa = PBXGroup;
+			children = (
+				C0000A54207E3F6400B7BE20 /* CompanyModel.swift */,
+			);
+			path = AdditionalClasses;
+			sourceTree = "<group>";
+		};
 		C0F67412207DF03500E10E82 = {
 			isa = PBXGroup;
 			children = (
@@ -137,9 +167,12 @@
 		C0F6741D207DF03500E10E82 /* SwedLon */ = {
 			isa = PBXGroup;
 			children = (
+				C0000A56207E404400B7BE20 /* AdditionalClasses */,
+				C0000A53207E3B4100B7BE20 /* Extensions */,
 				C0000A4D207E335500B7BE20 /* ViewControllers */,
-				C0F6741E207DF03500E10E82 /* AppDelegate.swift */,
+				C0000A50207E394C00B7BE20 /* CellModels */,
 				C0F67422207DF03600E10E82 /* Main.storyboard */,
+				C0F6741E207DF03500E10E82 /* AppDelegate.swift */,
 				C0F67428207DF03700E10E82 /* Assets.xcassets */,
 				C0F6742A207DF03700E10E82 /* LaunchScreen.storyboard */,
 				C0F6742D207DF03700E10E82 /* Info.plist */,
@@ -467,6 +500,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0F67427207DF03600E10E82 /* SwedLon.xcdatamodeld in Sources */,
+				C0000A55207E3F6400B7BE20 /* CompanyModel.swift in Sources */,
+				C0000A4F207E394200B7BE20 /* CompaniesCell.swift in Sources */,
+				C0000A52207E398E00B7BE20 /* CompCollectionExtension.swift in Sources */,
 				C0F67450207DF07D00E10E82 /* MainVC.swift in Sources */,
 				C0F6741F207DF03500E10E82 /* AppDelegate.swift in Sources */,
 			);

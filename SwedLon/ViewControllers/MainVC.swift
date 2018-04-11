@@ -12,6 +12,10 @@ import Charts
 
 class MainVC: UIViewController {
     
+    let collectionCellId = "collectionCellId"
+    
+    var companyList: [Company] = []
+    
     var nettoIncomeEntry = PieChartDataEntry(value: 30000)
     var taxEntry = PieChartDataEntry(value: 16345)
     var amountOfTheSalary = [PieChartDataEntry]()
@@ -20,7 +24,7 @@ class MainVC: UIViewController {
         let view = UIScrollView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
-        view.contentSize.height = 1000
+        view.contentSize.height = 900
         view.isScrollEnabled = true
         return view
     }()
@@ -31,9 +35,24 @@ class MainVC: UIViewController {
         view.backgroundColor = .white
       //  view.backgroundColor = UIColor.blue.withAlphaComponent(0.6)
         view.layer.shadowOpacity = 0.2
-        view.layer.shadowRadius = 12
+        view.layer.shadowRadius = 10
         view.layer.cornerRadius = 10
         return view
+    }()
+    
+    lazy var inputTextField: UITextField = {
+        let inputField = UITextField()
+        inputField.translatesAutoresizingMaskIntoConstraints = false
+        inputField.placeholder = "Enter your salary"
+        inputField.textAlignment = .center
+        inputField.font = UIFont.systemFont(ofSize: 18)
+        inputField.layer.borderWidth = 1
+        inputField.backgroundColor = .white
+        inputField.layer.shadowOpacity = 0.2
+        inputField.layer.shadowRadius = 7
+        inputField.layer.borderColor = UIColor.lightGray.cgColor.copy(alpha: 0.3)
+        inputField.layer.cornerRadius = 5
+        return inputField
     }()
     
     lazy var salaryDetailsView: UIView = {
@@ -41,7 +60,7 @@ class MainVC: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
         view.layer.shadowOpacity = 0.2
-        view.layer.shadowRadius = 12
+        view.layer.shadowRadius = 10
         view.layer.cornerRadius = 10
 
         return view
@@ -60,21 +79,17 @@ class MainVC: UIViewController {
         return chart
     }()
     
-    lazy var inputTextField: UITextField = {
-        let inputField = UITextField()
-        inputField.translatesAutoresizingMaskIntoConstraints = false
-        inputField.placeholder = "Enter your salary"
-        inputField.textAlignment = .center
-        inputField.font = UIFont.systemFont(ofSize: 18)
-        inputField.layer.borderWidth = 1
-        inputField.backgroundColor = .white
-        inputField.layer.shadowOpacity = 0.2
-        inputField.layer.shadowRadius = 7
-        inputField.layer.borderColor = UIColor.lightGray.cgColor.copy(alpha: 0.3)
-        inputField.layer.cornerRadius = 5
-        return inputField
+    lazy var companiesCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        let view = UICollectionView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), collectionViewLayout: layout)
+        layout.scrollDirection = .horizontal
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.register(CompaniesCell.self, forCellWithReuseIdentifier: collectionCellId)
+        view.backgroundColor = .white
+        return view
     }()
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(scrollView)
@@ -82,12 +97,15 @@ class MainVC: UIViewController {
         inputSalaryView.addSubview(inputTextField)
         scrollView.addSubview(salaryDetailsView)
         salaryDetailsView.addSubview(salaryChart)
+        salaryDetailsView.addSubview(companiesCollectionView)
         setupScrollView()
         setupSalaryDetailsView()
         setupInputView()
         amountOfTheSalary = [nettoIncomeEntry, taxEntry]
         updateChartData()
-        
+        self.companyList = createCompaniesArray()
+        companiesCollectionView.delegate = self
+        companiesCollectionView.dataSource = self
     }
     
     func updateChartData(){
@@ -101,7 +119,7 @@ class MainVC: UIViewController {
     }
     
     func setupScrollView(){
-        scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
+        scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 80).isActive = true
         scrollView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         scrollView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
@@ -109,7 +127,7 @@ class MainVC: UIViewController {
     
     func setupInputView(){
         inputSalaryView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        inputSalaryView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 40).isActive = true
+        inputSalaryView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 10).isActive = true
         inputSalaryView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
         inputSalaryView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
         inputSalaryView.heightAnchor.constraint(equalToConstant: 100).isActive = true
@@ -133,8 +151,61 @@ class MainVC: UIViewController {
         salaryChart.topAnchor.constraint(equalTo: salaryDetailsView.topAnchor, constant: 20).isActive = true
         salaryChart.widthAnchor.constraint(equalToConstant: 320).isActive = true
         salaryChart.heightAnchor.constraint(equalToConstant: 320).isActive = true
+        
+        companiesCollectionView.topAnchor.constraint(equalTo: salaryChart.bottomAnchor, constant: 5).isActive = true
+        companiesCollectionView.leftAnchor.constraint(equalTo: salaryDetailsView.leftAnchor, constant: 10).isActive = true
+        companiesCollectionView.rightAnchor.constraint(equalTo: salaryDetailsView.leftAnchor, constant: -10).isActive = true
+        companiesCollectionView.heightAnchor.constraint(equalToConstant: 60).isActive = true
+    }
+    
+    //TEMPORARY SOLUTION WITH ARRAY
+    func createCompaniesArray() -> [Company]{
+        var array: [Company] = []
+        
+        let company1 = Company(name: "TradeDoubler", logoName: "td", link: "http://www.tradedoubler.com/en/careers-at-tradedoubler/current-vacancies/")
+        let company2 = Company(name: "Ikea", logoName: "ikea", link: "http://www.ikea.com/ms/en_JP/the_ikea_story/jobs_at_ikea/index.html")
+        let company3 = Company(name: "Nordea", logoName: "nordea", link: "https://www.nordea.com/en/career/")
+        let company4 = Company(name: "Swedbank", logoName: "swedbank", link: "https://www.swedbank.com/work-with-us/job-openings/index.htm")
+        let company5 = Company(name: "Uber", logoName: "uber", link: "https://www.uber.com/en-SE/careers/")
+        let company6 = Company(name: "Mcdonalds", logoName: "mc", link: "https://www.mcdonalds.com/se/sv-se/jobb/sok-jobb.html")
+        let company7 = Company(name: "Spotify", logoName: "spotify", link: "https://www.spotifyjobs.com/")
+        let company8 = Company(name: "Hemkop", logoName: "hemkop", link: "https://www.hemkop.se/jobb")
+        let company9 = Company(name: "BurgerKing", logoName: "burgerking", link: "https://burgerking.se/jobb")
+        let company10 = Company(name: "Volvo", logoName: "volvo", link: "https://xjobs.brassring.com/TGnewUI/Search/Home/Home?partnerid=25079&siteid=5171#home")
+        let company11 = Company(name: "Blocket", logoName: "blocket", link: "https://www.blocket.career/jobs")
+        let company12 = Company(name: "Polisen", logoName: "polisen", link: "https://polisen.se/Aktuellt/Lediga-jobb/")
+        let company13 = Company(name: "Google", logoName: "google", link: "https://careers.google.com/locations/")
+        let company14 = Company(name: "Ge", logoName: "ge", link: "https://www.ge.com/se/careers")
+        let company15 = Company(name: "Uber", logoName: "uber", link: "https://www.uber.com/info/careers/eats/")
+        let company16 = Company(name: "Microsoft", logoName: "microsoft", link: "https://careers.microsoft.com/")
+        let company17 = Company(name: "Saab", logoName: "saab", link: "https://saabgroup.com/career/vacancies/")
+        let company18 = Company(name: "H&M", logoName: "hm", link: "https://career.hm.com/content/hmcareer/en_se/findjob.html")
+        
+        array.append(company1)
+        array.append(company2)
+        array.append(company3)
+        array.append(company4)
+        array.append(company5)
+        array.append(company6)
+        array.append(company7)
+        array.append(company8)
+        array.append(company9)
+        array.append(company10)
+        array.append(company11)
+        array.append(company12)
+        array.append(company13)
+        array.append(company14)
+        array.append(company15)
+        array.append(company16)
+        array.append(company17)
+        array.append(company18)
 
+        return array
     }
     
     
 }
+
+
+
+
