@@ -1,0 +1,6 @@
+framework module Pods_SwedLonTests {
+  umbrella header "Pods-SwedLonTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
