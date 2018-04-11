@@ -1,0 +1,606 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C0F6741F207DF03500E10E82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F6741E207DF03500E10E82 /* AppDelegate.swift */; };
+		C0F67421207DF03600E10E82 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F67420207DF03600E10E82 /* ViewController.swift */; };
+		C0F67424207DF03600E10E82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0F67422207DF03600E10E82 /* Main.storyboard */; };
+		C0F67427207DF03600E10E82 /* SwedLon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C0F67425207DF03600E10E82 /* SwedLon.xcdatamodeld */; };
+		C0F67429207DF03700E10E82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0F67428207DF03700E10E82 /* Assets.xcassets */; };
+		C0F6742C207DF03700E10E82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0F6742A207DF03700E10E82 /* LaunchScreen.storyboard */; };
+		C0F67437207DF03700E10E82 /* SwedLonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F67436207DF03700E10E82 /* SwedLonTests.swift */; };
+		C0F67442207DF03700E10E82 /* SwedLonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F67441207DF03700E10E82 /* SwedLonUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C0F67433207DF03700E10E82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C0F67413207DF03500E10E82 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C0F6741A207DF03500E10E82;
+			remoteInfo = SwedLon;
+		};
+		C0F6743E207DF03700E10E82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C0F67413207DF03500E10E82 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C0F6741A207DF03500E10E82;
+			remoteInfo = SwedLon;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C0F6741B207DF03500E10E82 /* SwedLon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwedLon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0F6741E207DF03500E10E82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C0F67420207DF03600E10E82 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C0F67423207DF03600E10E82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C0F67426207DF03600E10E82 /* SwedLon.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwedLon.xcdatamodel; sourceTree = "<group>"; };
+		C0F67428207DF03700E10E82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C0F6742B207DF03700E10E82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C0F6742D207DF03700E10E82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0F67432207DF03700E10E82 /* SwedLonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwedLonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0F67436207DF03700E10E82 /* SwedLonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwedLonTests.swift; sourceTree = "<group>"; };
+		C0F67438207DF03700E10E82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0F6743D207DF03700E10E82 /* SwedLonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwedLonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0F67441207DF03700E10E82 /* SwedLonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwedLonUITests.swift; sourceTree = "<group>"; };
+		C0F67443207DF03700E10E82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C0F67418207DF03500E10E82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0F6742F207DF03700E10E82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0F6743A207DF03700E10E82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C0F67412207DF03500E10E82 = {
+			isa = PBXGroup;
+			children = (
+				C0F6741D207DF03500E10E82 /* SwedLon */,
+				C0F67435207DF03700E10E82 /* SwedLonTests */,
+				C0F67440207DF03700E10E82 /* SwedLonUITests */,
+				C0F6741C207DF03500E10E82 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C0F6741C207DF03500E10E82 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C0F6741B207DF03500E10E82 /* SwedLon.app */,
+				C0F67432207DF03700E10E82 /* SwedLonTests.xctest */,
+				C0F6743D207DF03700E10E82 /* SwedLonUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C0F6741D207DF03500E10E82 /* SwedLon */ = {
+			isa = PBXGroup;
+			children = (
+				C0F6741E207DF03500E10E82 /* AppDelegate.swift */,
+				C0F67420207DF03600E10E82 /* ViewController.swift */,
+				C0F67422207DF03600E10E82 /* Main.storyboard */,
+				C0F67428207DF03700E10E82 /* Assets.xcassets */,
+				C0F6742A207DF03700E10E82 /* LaunchScreen.storyboard */,
+				C0F6742D207DF03700E10E82 /* Info.plist */,
+				C0F67425207DF03600E10E82 /* SwedLon.xcdatamodeld */,
+			);
+			path = SwedLon;
+			sourceTree = "<group>";
+		};
+		C0F67435207DF03700E10E82 /* SwedLonTests */ = {
+			isa = PBXGroup;
+			children = (
+				C0F67436207DF03700E10E82 /* SwedLonTests.swift */,
+				C0F67438207DF03700E10E82 /* Info.plist */,
+			);
+			path = SwedLonTests;
+			sourceTree = "<group>";
+		};
+		C0F67440207DF03700E10E82 /* SwedLonUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C0F67441207DF03700E10E82 /* SwedLonUITests.swift */,
+				C0F67443207DF03700E10E82 /* Info.plist */,
+			);
+			path = SwedLonUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C0F6741A207DF03500E10E82 /* SwedLon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0F67446207DF03700E10E82 /* Build configuration list for PBXNativeTarget "SwedLon" */;
+			buildPhases = (
+				C0F67417207DF03500E10E82 /* Sources */,
+				C0F67418207DF03500E10E82 /* Frameworks */,
+				C0F67419207DF03500E10E82 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwedLon;
+			productName = SwedLon;
+			productReference = C0F6741B207DF03500E10E82 /* SwedLon.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C0F67431207DF03700E10E82 /* SwedLonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0F67449207DF03700E10E82 /* Build configuration list for PBXNativeTarget "SwedLonTests" */;
+			buildPhases = (
+				C0F6742E207DF03700E10E82 /* Sources */,
+				C0F6742F207DF03700E10E82 /* Frameworks */,
+				C0F67430207DF03700E10E82 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C0F67434207DF03700E10E82 /* PBXTargetDependency */,
+			);
+			name = SwedLonTests;
+			productName = SwedLonTests;
+			productReference = C0F67432207DF03700E10E82 /* SwedLonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C0F6743C207DF03700E10E82 /* SwedLonUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0F6744C207DF03700E10E82 /* Build configuration list for PBXNativeTarget "SwedLonUITests" */;
+			buildPhases = (
+				C0F67439207DF03700E10E82 /* Sources */,
+				C0F6743A207DF03700E10E82 /* Frameworks */,
+				C0F6743B207DF03700E10E82 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C0F6743F207DF03700E10E82 /* PBXTargetDependency */,
+			);
+			name = SwedLonUITests;
+			productName = SwedLonUITests;
+			productReference = C0F6743D207DF03700E10E82 /* SwedLonUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C0F67413207DF03500E10E82 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "Uladzislau Daratsiuk";
+				TargetAttributes = {
+					C0F6741A207DF03500E10E82 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					C0F67431207DF03700E10E82 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = C0F6741A207DF03500E10E82;
+					};
+					C0F6743C207DF03700E10E82 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = C0F6741A207DF03500E10E82;
+					};
+				};
+			};
+			buildConfigurationList = C0F67416207DF03500E10E82 /* Build configuration list for PBXProject "SwedLon" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C0F67412207DF03500E10E82;
+			productRefGroup = C0F6741C207DF03500E10E82 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C0F6741A207DF03500E10E82 /* SwedLon */,
+				C0F67431207DF03700E10E82 /* SwedLonTests */,
+				C0F6743C207DF03700E10E82 /* SwedLonUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C0F67419207DF03500E10E82 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0F6742C207DF03700E10E82 /* LaunchScreen.storyboard in Resources */,
+				C0F67429207DF03700E10E82 /* Assets.xcassets in Resources */,
+				C0F67424207DF03600E10E82 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0F67430207DF03700E10E82 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0F6743B207DF03700E10E82 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C0F67417207DF03500E10E82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0F67421207DF03600E10E82 /* ViewController.swift in Sources */,
+				C0F67427207DF03600E10E82 /* SwedLon.xcdatamodeld in Sources */,
+				C0F6741F207DF03500E10E82 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0F6742E207DF03700E10E82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0F67437207DF03700E10E82 /* SwedLonTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0F67439207DF03700E10E82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0F67442207DF03700E10E82 /* SwedLonUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C0F67434207DF03700E10E82 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C0F6741A207DF03500E10E82 /* SwedLon */;
+			targetProxy = C0F67433207DF03700E10E82 /* PBXContainerItemProxy */;
+		};
+		C0F6743F207DF03700E10E82 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C0F6741A207DF03500E10E82 /* SwedLon */;
+			targetProxy = C0F6743E207DF03700E10E82 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C0F67422207DF03600E10E82 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C0F67423207DF03600E10E82 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C0F6742A207DF03700E10E82 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C0F6742B207DF03700E10E82 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C0F67444207DF03700E10E82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C0F67445207DF03700E10E82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C0F67447207DF03700E10E82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z4NGAZXKWW;
+				INFOPLIST_FILE = SwedLon/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = uladzislau.daratsiuk.SwedLon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C0F67448207DF03700E10E82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z4NGAZXKWW;
+				INFOPLIST_FILE = SwedLon/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = uladzislau.daratsiuk.SwedLon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C0F6744A207DF03700E10E82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z4NGAZXKWW;
+				INFOPLIST_FILE = SwedLonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = uladzislau.daratsiuk.SwedLonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwedLon.app/SwedLon";
+			};
+			name = Debug;
+		};
+		C0F6744B207DF03700E10E82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z4NGAZXKWW;
+				INFOPLIST_FILE = SwedLonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = uladzislau.daratsiuk.SwedLonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwedLon.app/SwedLon";
+			};
+			name = Release;
+		};
+		C0F6744D207DF03700E10E82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z4NGAZXKWW;
+				INFOPLIST_FILE = SwedLonUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = uladzislau.daratsiuk.SwedLonUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SwedLon;
+			};
+			name = Debug;
+		};
+		C0F6744E207DF03700E10E82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z4NGAZXKWW;
+				INFOPLIST_FILE = SwedLonUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = uladzislau.daratsiuk.SwedLonUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SwedLon;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C0F67416207DF03500E10E82 /* Build configuration list for PBXProject "SwedLon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0F67444207DF03700E10E82 /* Debug */,
+				C0F67445207DF03700E10E82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C0F67446207DF03700E10E82 /* Build configuration list for PBXNativeTarget "SwedLon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0F67447207DF03700E10E82 /* Debug */,
+				C0F67448207DF03700E10E82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C0F67449207DF03700E10E82 /* Build configuration list for PBXNativeTarget "SwedLonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0F6744A207DF03700E10E82 /* Debug */,
+				C0F6744B207DF03700E10E82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C0F6744C207DF03700E10E82 /* Build configuration list for PBXNativeTarget "SwedLonUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0F6744D207DF03700E10E82 /* Debug */,
+				C0F6744E207DF03700E10E82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C0F67425207DF03600E10E82 /* SwedLon.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C0F67426207DF03600E10E82 /* SwedLon.xcdatamodel */,
+			);
+			currentVersion = C0F67426207DF03600E10E82 /* SwedLon.xcdatamodel */;
+			path = SwedLon.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C0F67413207DF03500E10E82 /* Project object */;
+}
