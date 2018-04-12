@@ -20,6 +20,12 @@ class MainVC: UIViewController {
     var taxEntry = PieChartDataEntry(value: 16345)
     var amountOfTheSalary = [PieChartDataEntry]()
     
+    lazy var navigationBar: UINavigationBar = {
+       let navBar = UINavigationBar()
+        return navBar
+    }()
+    
+    
     lazy var scrollView: UIScrollView = {
         let view = UIScrollView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -70,7 +76,7 @@ class MainVC: UIViewController {
        let chart = PieChartView()
         chart.translatesAutoresizingMaskIntoConstraints = false
         chart.chartDescription?.text = "Details of the Salary"
-        chart.chartDescription?.font = UIFont.systemFont(ofSize: 10)
+        chart.chartDescription?.font = UIFont.systemFont(ofSize: 12)
         chart.layer.shadowOpacity = 0.2
         chart.layer.shadowRadius = 7
         nettoIncomeEntry.label = "Netto"
@@ -124,6 +130,8 @@ class MainVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(navigationBar)
+
         view.addSubview(scrollView)
         scrollView.addSubview(inputSalaryView)
         inputSalaryView.addSubview(inputTextField)
@@ -133,10 +141,12 @@ class MainVC: UIViewController {
         scrollView.addSubview(currenciesDetailsView)
         currenciesDetailsView.addSubview(currenciesCollectionView)
         currenciesDetailsView.addSubview(currencyLabel)
+        
         companiesCollectionView.delegate = self
         companiesCollectionView.dataSource = self
         currenciesCollectionView.delegate = self
         currenciesCollectionView.dataSource = self
+        
         setupScrollView()
         setupInputView()
         setupSalaryDetailsView()
@@ -188,10 +198,10 @@ class MainVC: UIViewController {
         salaryDetailsView.heightAnchor.constraint(equalToConstant: 390).isActive = true
         
         salaryChart.centerXAnchor.constraint(lessThanOrEqualTo: salaryDetailsView.centerXAnchor).isActive = true
-        salaryChart.topAnchor.constraint(equalTo: salaryDetailsView.topAnchor, constant: 20).isActive = true
+        salaryChart.topAnchor.constraint(equalTo: salaryDetailsView.topAnchor, constant: 2).isActive = true
         salaryChart.leftAnchor.constraint(equalTo: salaryDetailsView.leftAnchor, constant: 1).isActive = true
         salaryChart.rightAnchor.constraint(equalTo: salaryDetailsView.rightAnchor, constant: -1).isActive = true
-        salaryChart.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        salaryChart.heightAnchor.constraint(equalToConstant: 310).isActive = true
         
         companiesCollectionView.topAnchor.constraint(equalTo: salaryChart.bottomAnchor, constant: 5).isActive = true
         companiesCollectionView.leftAnchor.constraint(equalTo: salaryDetailsView.leftAnchor, constant: 10).isActive = true
@@ -206,13 +216,13 @@ class MainVC: UIViewController {
         currenciesDetailsView.topAnchor.constraint(equalTo: salaryDetailsView.bottomAnchor, constant: 15).isActive = true
         currenciesDetailsView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
         currenciesDetailsView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
-        currenciesDetailsView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        currenciesDetailsView.heightAnchor.constraint(equalToConstant: 280).isActive = true
         
-        currenciesCollectionView.topAnchor.constraint(equalTo: currencyLabel.bottomAnchor, constant: 10).isActive = true
+        currenciesCollectionView.topAnchor.constraint(equalTo: currencyLabel.bottomAnchor, constant: 15).isActive = true
         currenciesCollectionView.centerXAnchor.constraint(equalTo: currenciesDetailsView.centerXAnchor).isActive = true
         currenciesCollectionView.leftAnchor.constraint(equalTo: currenciesDetailsView.leftAnchor, constant: 10).isActive = true
         currenciesCollectionView.rightAnchor.constraint(equalTo: currenciesDetailsView.rightAnchor, constant: -10).isActive = true
-        currenciesCollectionView.heightAnchor.constraint(equalToConstant: 170).isActive = true
+        currenciesCollectionView.heightAnchor.constraint(equalToConstant: 225).isActive = true
         
         currencyLabel.topAnchor.constraint(equalTo: currenciesDetailsView.topAnchor, constant: 10).isActive = true
         currencyLabel.leftAnchor.constraint(equalTo: currenciesDetailsView.leftAnchor, constant: 15).isActive = true

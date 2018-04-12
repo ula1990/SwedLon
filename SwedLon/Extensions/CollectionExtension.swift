@@ -43,7 +43,7 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource,UICollect
         if collectionView == companiesCollectionView {
         return CGSize(width: 50, height: 50)
         }else{
-            return CGSize(width: 120, height: 70)
+            return CGSize(width: 170, height: 100)
         }
     }
     
@@ -51,7 +51,7 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource,UICollect
          if collectionView == companiesCollectionView {
         return UIEdgeInsets(top: 5, left: 2, bottom: 5, right: 2)
          }else{
-        return UIEdgeInsets(top: 3, left: 4, bottom: 3, right: 4)
+        return UIEdgeInsets(top: 3, left: 5, bottom: 2, right: 3)
         }
     }
 }
