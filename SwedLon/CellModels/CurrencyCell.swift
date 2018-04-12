@@ -15,8 +15,8 @@ class CurrencyCell: UICollectionViewCell {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.clipsToBounds = true
-      //  image.backgroundColor = UIColor.white
-        image.layer.cornerRadius = 17.5
+        image.backgroundColor = UIColor.white
+        image.layer.cornerRadius = 15
         image.contentMode = .scaleAspectFill
         image.layer.shadowOpacity = 0.6
         image.layer.shadowRadius = 8
@@ -40,7 +40,7 @@ class CurrencyCell: UICollectionViewCell {
     let rateLabel : UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.font = UIFont.systemFont(ofSize: 13)
         label.textColor = UIColor.black.withAlphaComponent(0.6)
         label.text = "1.66"
         label.textAlignment = .center
@@ -50,19 +50,29 @@ class CurrencyCell: UICollectionViewCell {
     let currencyName : UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 15)
+        label.font = UIFont.systemFont(ofSize: 13)
         label.textColor = UIColor.black.withAlphaComponent(0.6)
         label.text = "GBP"
         label.textAlignment = .center
         return label
     }()
 
+    let beforeTaxResultLabel : UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 17)
+        label.textColor = UIColor.black.withAlphaComponent(0.6)
+        label.text = "196.000"
+        label.textAlignment = .center
+        return label
+    }()
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.addSubview(flagImage)
         self.addSubview(stocksTriangleImage)
         self.addSubview(currencyName)
         self.addSubview(rateLabel)
+        self.addSubview(beforeTaxResultLabel)
         setupViewOfCell()
     }
     
@@ -73,24 +83,31 @@ class CurrencyCell: UICollectionViewCell {
     func setupViewOfCell(){
         flagImage.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 5).isActive = true
         flagImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 5).isActive = true
-        flagImage.heightAnchor.constraint(equalToConstant: 35).isActive = true
-        flagImage.widthAnchor.constraint(equalToConstant: 35).isActive = true
+        flagImage.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        flagImage.widthAnchor.constraint(equalToConstant: 30).isActive = true
         
         
         stocksTriangleImage.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -5).isActive = true
-        stocksTriangleImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive = true
-        stocksTriangleImage.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        stocksTriangleImage.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        stocksTriangleImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 8).isActive = true
+        stocksTriangleImage.heightAnchor.constraint(equalToConstant: 15).isActive = true
+        stocksTriangleImage.widthAnchor.constraint(equalToConstant: 15).isActive = true
         
         
-        rateLabel.leftAnchor.constraint(equalTo: currencyName.rightAnchor, constant: 5).isActive = true
-        rateLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 15).isActive = true
+        rateLabel.rightAnchor.constraint(equalTo: stocksTriangleImage.leftAnchor, constant: 3).isActive = true
+        rateLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 13).isActive = true
         rateLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
         rateLabel.widthAnchor.constraint(equalToConstant: 40).isActive = true
         
-        currencyName.leftAnchor.constraint(equalTo: flagImage.rightAnchor, constant: 5).isActive = true
-        currencyName.topAnchor.constraint(equalTo: self.topAnchor, constant: 14).isActive = true
+        currencyName.leftAnchor.constraint(equalTo: flagImage.rightAnchor, constant: 1).isActive = true
+        currencyName.topAnchor.constraint(equalTo: self.topAnchor, constant: 13).isActive = true
         currencyName.heightAnchor.constraint(equalToConstant: 20).isActive = true
         currencyName.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        
+        
+        beforeTaxResultLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 5).isActive = true
+        beforeTaxResultLabel.topAnchor.constraint(equalTo: flagImage.bottomAnchor, constant: 10).isActive = true
+        beforeTaxResultLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        beforeTaxResultLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 5).isActive = true
+        
     }
 }

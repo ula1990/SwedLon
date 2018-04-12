@@ -16,21 +16,31 @@ class MainVC: UIViewController {
     
     var companyList: [Company] = []
     
-    var nettoIncomeEntry = PieChartDataEntry(value: 30000)
-    var taxEntry = PieChartDataEntry(value: 16345)
+    var nettoIncomeEntry = PieChartDataEntry(value: 1)
+    var taxEntry = PieChartDataEntry(value: 2)
     var amountOfTheSalary = [PieChartDataEntry]()
     
     lazy var navigationBar: UINavigationBar = {
-       let navBar = UINavigationBar()
+       let navBar = UINavigationBar(frame: CGRect(x: 0, y: 35, width: view.frame.width, height: 40))
+        navBar.backgroundColor = .white
+        navBar.setBackgroundImage(UIImage(), for: .default)
+        navBar.shadowImage = UIImage()
+        let navItem = UINavigationItem()
+        navItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage(named: "menu"), style: .done, target: self, action: #selector(handleMenu))
+        navItem.leftBarButtonItem?.tintColor = UIColor.lightGray.withAlphaComponent(1)
+        navBar.setItems([navItem], animated: true)
         return navBar
     }()
     
+    @objc func handleMenu(){
+        
+    }
     
     lazy var scrollView: UIScrollView = {
         let view = UIScrollView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
-        view.contentSize.height = 900
+        view.contentSize.height = 800
         view.isScrollEnabled = true
         return view
     }()
@@ -40,7 +50,7 @@ class MainVC: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
         view.layer.shadowOpacity = 0.2
-        view.layer.shadowRadius = 10
+        view.layer.shadowRadius = 7
         view.layer.cornerRadius = 10
         return view
     }()
@@ -65,7 +75,7 @@ class MainVC: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
         view.layer.shadowOpacity = 0.2
-        view.layer.shadowRadius = 10
+        view.layer.shadowRadius = 7
         view.layer.cornerRadius = 10
 
         return view
@@ -101,7 +111,7 @@ class MainVC: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
         view.layer.shadowOpacity = 0.2
-        view.layer.shadowRadius = 10
+        view.layer.shadowRadius = 7
         view.layer.cornerRadius = 10
         
         return view
@@ -128,10 +138,8 @@ class MainVC: UIViewController {
         return label
     }()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    fileprivate func addAllViews() {
         view.addSubview(navigationBar)
-
         view.addSubview(scrollView)
         scrollView.addSubview(inputSalaryView)
         inputSalaryView.addSubview(inputTextField)
@@ -141,16 +149,27 @@ class MainVC: UIViewController {
         scrollView.addSubview(currenciesDetailsView)
         currenciesDetailsView.addSubview(currenciesCollectionView)
         currenciesDetailsView.addSubview(currencyLabel)
-        
-        companiesCollectionView.delegate = self
-        companiesCollectionView.dataSource = self
-        currenciesCollectionView.delegate = self
-        currenciesCollectionView.dataSource = self
-        
+    }
+    
+    fileprivate func setupAllViews() {
         setupScrollView()
         setupInputView()
         setupSalaryDetailsView()
         setupCurrenciesView()
+    }
+    
+    fileprivate func connectAllCollections() {
+        companiesCollectionView.delegate = self
+        companiesCollectionView.dataSource = self
+        currenciesCollectionView.delegate = self
+        currenciesCollectionView.dataSource = self
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        addAllViews()
+        setupAllViews()
+        connectAllCollections()
 
         amountOfTheSalary = [nettoIncomeEntry, taxEntry]
         updateChartData()
@@ -169,7 +188,7 @@ class MainVC: UIViewController {
     }
     
     func setupScrollView(){
-        scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 80).isActive = true
+        scrollView.topAnchor.constraint(equalTo: navigationBar.bottomAnchor).isActive = true
         scrollView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         scrollView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
@@ -177,9 +196,9 @@ class MainVC: UIViewController {
     
     func setupInputView(){
         inputSalaryView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        inputSalaryView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20).isActive = true
-        inputSalaryView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
-        inputSalaryView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+        inputSalaryView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 10).isActive = true
+        inputSalaryView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15).isActive = true
+        inputSalaryView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15).isActive = true
         inputSalaryView.heightAnchor.constraint(equalToConstant: 80).isActive = true
         
         inputTextField.centerYAnchor.constraint(equalTo: inputSalaryView.centerYAnchor).isActive = true
@@ -193,8 +212,8 @@ class MainVC: UIViewController {
     func setupSalaryDetailsView(){
         salaryDetailsView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
         salaryDetailsView.topAnchor.constraint(equalTo: inputSalaryView.bottomAnchor, constant: 15).isActive = true
-        salaryDetailsView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
-        salaryDetailsView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+        salaryDetailsView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15).isActive = true
+        salaryDetailsView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15).isActive = true
         salaryDetailsView.heightAnchor.constraint(equalToConstant: 390).isActive = true
         
         salaryChart.centerXAnchor.constraint(lessThanOrEqualTo: salaryDetailsView.centerXAnchor).isActive = true
@@ -214,15 +233,15 @@ class MainVC: UIViewController {
         
         currenciesDetailsView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
         currenciesDetailsView.topAnchor.constraint(equalTo: salaryDetailsView.bottomAnchor, constant: 15).isActive = true
-        currenciesDetailsView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
-        currenciesDetailsView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
-        currenciesDetailsView.heightAnchor.constraint(equalToConstant: 280).isActive = true
+        currenciesDetailsView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15).isActive = true
+        currenciesDetailsView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15).isActive = true
+        currenciesDetailsView.heightAnchor.constraint(equalToConstant: 240).isActive = true
         
         currenciesCollectionView.topAnchor.constraint(equalTo: currencyLabel.bottomAnchor, constant: 15).isActive = true
         currenciesCollectionView.centerXAnchor.constraint(equalTo: currenciesDetailsView.centerXAnchor).isActive = true
         currenciesCollectionView.leftAnchor.constraint(equalTo: currenciesDetailsView.leftAnchor, constant: 10).isActive = true
         currenciesCollectionView.rightAnchor.constraint(equalTo: currenciesDetailsView.rightAnchor, constant: -10).isActive = true
-        currenciesCollectionView.heightAnchor.constraint(equalToConstant: 225).isActive = true
+        currenciesCollectionView.heightAnchor.constraint(equalToConstant: 180).isActive = true
         
         currencyLabel.topAnchor.constraint(equalTo: currenciesDetailsView.topAnchor, constant: 10).isActive = true
         currencyLabel.leftAnchor.constraint(equalTo: currenciesDetailsView.leftAnchor, constant: 15).isActive = true

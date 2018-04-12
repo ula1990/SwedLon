@@ -32,8 +32,10 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource,UICollect
             cell.layer.borderColor = UIColor.lightGray.cgColor.copy(alpha: 0.2)
             cell.layer.cornerRadius = 5
             cell.layer.shadowOpacity = 0.2
-            cell.layer.shadowRadius = 2
+            cell.layer.shadowRadius = 4
             cell.backgroundColor = .white
+          //  cell.backgroundColor = UIColor.darkGray.withAlphaComponent(0.1)
+            
             
             return cell
         }
@@ -43,7 +45,7 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource,UICollect
         if collectionView == companiesCollectionView {
         return CGSize(width: 50, height: 50)
         }else{
-            return CGSize(width: 170, height: 100)
+            return CGSize(width: 130, height: 80)
         }
     }
     
