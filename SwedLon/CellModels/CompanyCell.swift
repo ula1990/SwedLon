@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CompaniesCell: UICollectionViewCell {
+class CompanyCell: UICollectionViewCell {
     
     let companyButton: UIButton = {
         let button = UIButton()

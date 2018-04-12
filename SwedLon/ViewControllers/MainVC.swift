@@ -11,7 +11,8 @@ import Charts
 
 class MainVC: UIViewController {
     
-    let collectionCellId = "collectionCellId"
+    let companyCollectionCellId = "companyCollectionCellId"
+    let currencyCollectionCellId = "currencyCollectionCellId"
     
     var companyList: [Company] = []
     
@@ -82,7 +83,7 @@ class MainVC: UIViewController {
         let view = UICollectionView(frame: CGRect(x: 0, y: 0, width: 0, height: 60), collectionViewLayout: layout)
         layout.scrollDirection = .horizontal
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.register(CompaniesCell.self, forCellWithReuseIdentifier: collectionCellId)
+        view.register(CompanyCell.self, forCellWithReuseIdentifier: companyCollectionCellId)
         view.backgroundColor = .white
         return view
     }()
@@ -100,6 +101,26 @@ class MainVC: UIViewController {
         return view
     }()
     
+    
+    
+    lazy var currenciesCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        let view = UICollectionView(frame: CGRect(x: 0, y: 0, width: 0, height: 60), collectionViewLayout: layout)
+        layout.scrollDirection = .horizontal
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.register(CurrencyCell.self, forCellWithReuseIdentifier: currencyCollectionCellId)
+        view.backgroundColor = .white
+        return view
+    }()
+    
+    lazy var currencyLabel: UILabel = {
+       let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "More in others currencies"
+        label.font = UIFont.systemFont(ofSize: 15)
+        label.textColor = UIColor.lightGray
+        return label
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,8 +131,12 @@ class MainVC: UIViewController {
         salaryDetailsView.addSubview(salaryChart)
         salaryDetailsView.addSubview(companiesCollectionView)
         scrollView.addSubview(currenciesDetailsView)
+        currenciesDetailsView.addSubview(currenciesCollectionView)
+        currenciesDetailsView.addSubview(currencyLabel)
         companiesCollectionView.delegate = self
         companiesCollectionView.dataSource = self
+        currenciesCollectionView.delegate = self
+        currenciesCollectionView.dataSource = self
         setupScrollView()
         setupInputView()
         setupSalaryDetailsView()
@@ -181,7 +206,16 @@ class MainVC: UIViewController {
         currenciesDetailsView.topAnchor.constraint(equalTo: salaryDetailsView.bottomAnchor, constant: 15).isActive = true
         currenciesDetailsView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
         currenciesDetailsView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
-        currenciesDetailsView.heightAnchor.constraint(equalToConstant: 390).isActive = true
+        currenciesDetailsView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        
+        currenciesCollectionView.topAnchor.constraint(equalTo: currencyLabel.bottomAnchor, constant: 10).isActive = true
+        currenciesCollectionView.centerXAnchor.constraint(equalTo: currenciesDetailsView.centerXAnchor).isActive = true
+        currenciesCollectionView.leftAnchor.constraint(equalTo: currenciesDetailsView.leftAnchor, constant: 10).isActive = true
+        currenciesCollectionView.rightAnchor.constraint(equalTo: currenciesDetailsView.rightAnchor, constant: -10).isActive = true
+        currenciesCollectionView.heightAnchor.constraint(equalToConstant: 170).isActive = true
+        
+        currencyLabel.topAnchor.constraint(equalTo: currenciesDetailsView.topAnchor, constant: 10).isActive = true
+        currencyLabel.leftAnchor.constraint(equalTo: currenciesDetailsView.leftAnchor, constant: 15).isActive = true
         
     }
     
