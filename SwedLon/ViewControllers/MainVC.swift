@@ -13,8 +13,9 @@ class MainVC: UIViewController {
     
     let companyCollectionCellId = "companyCollectionCellId"
     let currencyCollectionCellId = "currencyCollectionCellId"
-    
+    var menuRightAnchor: NSLayoutConstraint?
     var companyList: [Company] = []
+    var menuShowing = false
     
     var nettoIncomeEntry = PieChartDataEntry(value: 1)
     var taxEntry = PieChartDataEntry(value: 2)
@@ -33,14 +34,41 @@ class MainVC: UIViewController {
     }()
     
     @objc func handleMenu(){
+       
+        
+        if (menuShowing){
+            UIView.animate(withDuration: 0.8) {
+                self.menuRightAnchor?.isActive = false
+               self.menuRightAnchor = self.menuView.rightAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0)
+                self.menuRightAnchor?.isActive = true
+            }
+        }else{
+            UIView.animate(withDuration: 0.8, animations: {
+                self.menuRightAnchor?.isActive = false
+                self.menuRightAnchor = self.menuView.rightAnchor.constraint(equalTo: self.view.leftAnchor, constant: 200)
+                self.menuRightAnchor?.isActive = true
+            }) { (true) in
+            }
+        }
+        
+        menuShowing = !menuShowing
         
     }
+    
+    lazy var menuView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = UIColor.white.withAlphaComponent(0.5)
+        view.layer.shadowOpacity = 0.2
+        view.layer.shadowRadius = 7
+        return view
+    }()
     
     lazy var scrollView: UIScrollView = {
         let view = UIScrollView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
-        view.contentSize.height = 800
+        view.contentSize.height = 750
         view.isScrollEnabled = true
         return view
     }()
@@ -141,6 +169,7 @@ class MainVC: UIViewController {
     fileprivate func addAllViews() {
         view.addSubview(navigationBar)
         view.addSubview(scrollView)
+        view.addSubview(menuView)
         scrollView.addSubview(inputSalaryView)
         inputSalaryView.addSubview(inputTextField)
         scrollView.addSubview(salaryDetailsView)
@@ -152,6 +181,7 @@ class MainVC: UIViewController {
     }
     
     fileprivate func setupAllViews() {
+        setupMenu()
         setupScrollView()
         setupInputView()
         setupSalaryDetailsView()
@@ -176,7 +206,7 @@ class MainVC: UIViewController {
         self.companyList = createCompaniesArray()
         
     }
-    
+
     func updateChartData(){
         
         let chartDataSet = PieChartDataSet(values: amountOfTheSalary, label: nil)
@@ -184,6 +214,17 @@ class MainVC: UIViewController {
         let colors = [UIColor(named: "green"), UIColor(named: "orange")]
         chartDataSet.colors = colors as! [NSUIColor]
         salaryChart.data = chartData
+    }
+    
+    func setupMenu(){
+        
+        menuView.topAnchor.constraint(equalTo: navigationBar.bottomAnchor).isActive = true
+        menuView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+   //     menuView.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        menuView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
+        menuRightAnchor = menuView.rightAnchor.constraint(equalTo: view.leftAnchor, constant: 0)
+        menuRightAnchor?.isActive = true
+        
         
     }
     
