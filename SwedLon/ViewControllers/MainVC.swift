@@ -17,6 +17,7 @@ class MainVC: UIViewController {
     
     
     var menuRightAnchor: NSLayoutConstraint?
+    var menuTitles = ["Main","Tutorial","History", "About"]
     var companyList: [Company] = []
     var menuShowing = false
     
@@ -63,7 +64,7 @@ class MainVC: UIViewController {
     lazy var menuView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.white.withAlphaComponent(0.5)
+        view.backgroundColor = UIColor.white.withAlphaComponent(0.6)
         view.layer.shadowOpacity = 0.2
         view.layer.shadowRadius = 7
         return view
@@ -72,8 +73,10 @@ class MainVC: UIViewController {
     lazy var menuTable: UITableView = {
        let table = UITableView()
         table.translatesAutoresizingMaskIntoConstraints = false
-        table.register(UITableViewCell.self, forCellReuseIdentifier: menuTableCellId)
+        table.register(MenuCell.self, forCellReuseIdentifier: menuTableCellId)
         table.backgroundColor = UIColor.white.withAlphaComponent(0)
+        table.separatorStyle = UITableViewCellSeparatorStyle.none
+        table.rowHeight = 70
         return table
     }()
     

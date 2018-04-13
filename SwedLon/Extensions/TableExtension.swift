@@ -11,18 +11,20 @@ import UIKit
 
 extension MainVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return menuTitles.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = menuTable.dequeueReusableCell(withIdentifier: menuTableCellId, for: indexPath)
+        let title = menuTitles[indexPath.row]
+        let cell = menuTable.dequeueReusableCell(withIdentifier: menuTableCellId, for: indexPath) as! MenuCell
         cell.backgroundColor = UIColor.white.withAlphaComponent(0)
+        cell.titleName.text = title
         return cell
     }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        menuTable.deselectRow(at: indexPath, animated: true)
     }
     
     
