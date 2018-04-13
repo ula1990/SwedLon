@@ -14,6 +14,7 @@
 		C0000A52207E398E00B7BE20 /* CollectionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0000A51207E398E00B7BE20 /* CollectionExtension.swift */; };
 		C0000A55207E3F6400B7BE20 /* CompanyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0000A54207E3F6400B7BE20 /* CompanyModel.swift */; };
 		C0000A58207F7E0A00B7BE20 /* CurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0000A57207F7E0A00B7BE20 /* CurrencyCell.swift */; };
+		C0168C0E20812FAA0048390B /* TableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0168C0D20812FAA0048390B /* TableExtension.swift */; };
 		C0F6741F207DF03500E10E82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F6741E207DF03500E10E82 /* AppDelegate.swift */; };
 		C0F67424207DF03600E10E82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0F67422207DF03600E10E82 /* Main.storyboard */; };
 		C0F67427207DF03600E10E82 /* SwedLon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C0F67425207DF03600E10E82 /* SwedLon.xcdatamodeld */; };
@@ -52,6 +53,7 @@
 		C0000A51207E398E00B7BE20 /* CollectionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtension.swift; sourceTree = "<group>"; };
 		C0000A54207E3F6400B7BE20 /* CompanyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyModel.swift; sourceTree = "<group>"; };
 		C0000A57207F7E0A00B7BE20 /* CurrencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCell.swift; sourceTree = "<group>"; };
+		C0168C0D20812FAA0048390B /* TableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableExtension.swift; sourceTree = "<group>"; };
 		C0F6741B207DF03500E10E82 /* SwedLon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwedLon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0F6741E207DF03500E10E82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0F67423207DF03600E10E82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				C0000A51207E398E00B7BE20 /* CollectionExtension.swift */,
+				C0168C0D20812FAA0048390B /* TableExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				C0000A55207E3F6400B7BE20 /* CompanyModel.swift in Sources */,
 				C0000A4F207E394200B7BE20 /* CompanyCell.swift in Sources */,
 				C0000A52207E398E00B7BE20 /* CollectionExtension.swift in Sources */,
+				C0168C0E20812FAA0048390B /* TableExtension.swift in Sources */,
 				C0000A58207F7E0A00B7BE20 /* CurrencyCell.swift in Sources */,
 				C0F67450207DF07D00E10E82 /* MainVC.swift in Sources */,
 				C0F6741F207DF03500E10E82 /* AppDelegate.swift in Sources */,

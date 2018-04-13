@@ -13,6 +13,9 @@ class MainVC: UIViewController {
     
     let companyCollectionCellId = "companyCollectionCellId"
     let currencyCollectionCellId = "currencyCollectionCellId"
+    let menuTableCellId = "menuTableCellId"
+    
+    
     var menuRightAnchor: NSLayoutConstraint?
     var companyList: [Company] = []
     var menuShowing = false
@@ -37,16 +40,18 @@ class MainVC: UIViewController {
        
         
         if (menuShowing){
-            UIView.animate(withDuration: 0.8) {
+            UIView.animate(withDuration: 0.3) {
                 self.menuRightAnchor?.isActive = false
                self.menuRightAnchor = self.menuView.rightAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0)
                 self.menuRightAnchor?.isActive = true
+                self.view.layoutIfNeeded()
             }
         }else{
-            UIView.animate(withDuration: 0.8, animations: {
+            UIView.animate(withDuration: 0.3, animations: {
                 self.menuRightAnchor?.isActive = false
-                self.menuRightAnchor = self.menuView.rightAnchor.constraint(equalTo: self.view.leftAnchor, constant: 200)
+                self.menuRightAnchor = self.menuView.rightAnchor.constraint(equalTo: self.view.leftAnchor, constant: 150)
                 self.menuRightAnchor?.isActive = true
+                self.view.layoutIfNeeded()
             }) { (true) in
             }
         }
@@ -62,6 +67,14 @@ class MainVC: UIViewController {
         view.layer.shadowOpacity = 0.2
         view.layer.shadowRadius = 7
         return view
+    }()
+    
+    lazy var menuTable: UITableView = {
+       let table = UITableView()
+        table.translatesAutoresizingMaskIntoConstraints = false
+        table.register(UITableViewCell.self, forCellReuseIdentifier: menuTableCellId)
+        table.backgroundColor = UIColor.white.withAlphaComponent(0)
+        return table
     }()
     
     lazy var scrollView: UIScrollView = {
@@ -170,6 +183,7 @@ class MainVC: UIViewController {
         view.addSubview(navigationBar)
         view.addSubview(scrollView)
         view.addSubview(menuView)
+        menuView.addSubview(menuTable)
         scrollView.addSubview(inputSalaryView)
         inputSalaryView.addSubview(inputTextField)
         scrollView.addSubview(salaryDetailsView)
@@ -189,6 +203,8 @@ class MainVC: UIViewController {
     }
     
     fileprivate func connectAllCollections() {
+        menuTable.delegate = self
+        menuTable.dataSource = self
         companiesCollectionView.delegate = self
         companiesCollectionView.dataSource = self
         currenciesCollectionView.delegate = self
@@ -220,10 +236,15 @@ class MainVC: UIViewController {
         
         menuView.topAnchor.constraint(equalTo: navigationBar.bottomAnchor).isActive = true
         menuView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-   //     menuView.widthAnchor.constraint(equalToConstant: 200).isActive = true
         menuView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
         menuRightAnchor = menuView.rightAnchor.constraint(equalTo: view.leftAnchor, constant: 0)
         menuRightAnchor?.isActive = true
+        
+        
+        menuTable.topAnchor.constraint(equalTo: menuView.topAnchor).isActive = true
+        menuTable.bottomAnchor.constraint(equalTo: menuView.bottomAnchor).isActive = true
+        menuTable.leftAnchor.constraint(equalTo: menuView.leftAnchor, constant: 2).isActive = true
+        menuTable.rightAnchor.constraint(equalTo: menuView.rightAnchor, constant: -2).isActive = true
         
         
     }
