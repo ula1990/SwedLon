@@ -16,6 +16,9 @@
 		C0000A58207F7E0A00B7BE20 /* CurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0000A57207F7E0A00B7BE20 /* CurrencyCell.swift */; };
 		C0168C0E20812FAA0048390B /* TableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0168C0D20812FAA0048390B /* TableExtension.swift */; };
 		C0168C1020813A0B0048390B /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0168C0F20813A0B0048390B /* MenuCell.swift */; };
+		C0168C12208140F70048390B /* TutorialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0168C11208140F70048390B /* TutorialVC.swift */; };
+		C0168C14208141050048390B /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0168C13208141050048390B /* HistoryVC.swift */; };
+		C0168C162081411C0048390B /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0168C152081411C0048390B /* AboutVC.swift */; };
 		C0F6741F207DF03500E10E82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F6741E207DF03500E10E82 /* AppDelegate.swift */; };
 		C0F67424207DF03600E10E82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0F67422207DF03600E10E82 /* Main.storyboard */; };
 		C0F67427207DF03600E10E82 /* SwedLon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C0F67425207DF03600E10E82 /* SwedLon.xcdatamodeld */; };
@@ -56,6 +59,9 @@
 		C0000A57207F7E0A00B7BE20 /* CurrencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCell.swift; sourceTree = "<group>"; };
 		C0168C0D20812FAA0048390B /* TableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableExtension.swift; sourceTree = "<group>"; };
 		C0168C0F20813A0B0048390B /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		C0168C11208140F70048390B /* TutorialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialVC.swift; sourceTree = "<group>"; };
+		C0168C13208141050048390B /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
+		C0168C152081411C0048390B /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		C0F6741B207DF03500E10E82 /* SwedLon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwedLon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0F6741E207DF03500E10E82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0F67423207DF03600E10E82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -120,6 +126,9 @@
 			isa = PBXGroup;
 			children = (
 				C0F6744F207DF07D00E10E82 /* MainVC.swift */,
+				C0168C11208140F70048390B /* TutorialVC.swift */,
+				C0168C13208141050048390B /* HistoryVC.swift */,
+				C0168C152081411C0048390B /* AboutVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -516,6 +525,9 @@
 				C0168C0E20812FAA0048390B /* TableExtension.swift in Sources */,
 				C0000A58207F7E0A00B7BE20 /* CurrencyCell.swift in Sources */,
 				C0F67450207DF07D00E10E82 /* MainVC.swift in Sources */,
+				C0168C162081411C0048390B /* AboutVC.swift in Sources */,
+				C0168C14208141050048390B /* HistoryVC.swift in Sources */,
+				C0168C12208140F70048390B /* TutorialVC.swift in Sources */,
 				C0F6741F207DF03500E10E82 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
